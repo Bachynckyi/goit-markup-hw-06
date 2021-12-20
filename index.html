@@ -48,6 +48,38 @@
             <button data-modal-open class="button-text" type="button">Заказать услугу</button>
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
+                <div class="modal-area">
+                    <h5 class="title-modal">Оставьте свои данные, мы вам перезвоним</h5>
+                    <form>
+                        <div class="form-area">
+                            <label for="name">Имя</label>
+                                <input type="text" name="name" id="name">
+                        </div>
+                        <div class="form-area">
+                            <label for="tel">Телефон</label>
+                            <input type="tel" name="tel" id="tel">
+                        </div>
+                        <div class="form-area">
+                            <label for="email">Почта</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="form-comment">
+                            <label for="comment">Комментарий</label>
+                        <textarea type name="comment" rows="5" placeholder="Введите текст" id="comment"></textarea>
+                        </div>
+                        
+                        <div class="check-box">
+                        <input type="checkbox" name="check-agree" id="checkbox">
+                        <label for="checkbox"><span class="text-checkbox">Соглашаюсь с рассылкой и принимаю </span><a class="text-checkbox link-checkbox" href="#">Условия договора</a></label>
+                        </div>
+                        <div class="button-modal">
+                        <button type="submit" class="but-modal">Отправить</button>
+                        </div>
+                        
+                    </form>
+
+                </div>
+
                 <button data-modal-close class="but-close-modal">
                     <svg class="icon-close-modal" width="30px" height="30px">
                         <use href="./images/icons.svg#icon-close"></use>
