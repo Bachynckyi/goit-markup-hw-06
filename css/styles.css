@@ -468,10 +468,16 @@ img {
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
   transition-delay: 0ms;
+  border: none;
 }
 .button-text:hover,
-.button-text:focus {
+.button-text:focus,
+.but-modal:hover,
+.but-modal:focus,
+.but-footer:hover,
+.but-footer:focus {
   background-color: #188ce8;
+  cursor: pointer;
 }
 
 .img-position {
@@ -730,6 +736,7 @@ img {
   transition: opacity;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
+  transition-delay: 0ms;
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -751,12 +758,15 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
+  transition-delay: 0ms;
 }
 
 .but-close-modal {
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 8px;
   right: 8px;
@@ -764,7 +774,15 @@ img {
   background-color: var(--color-but-add);
   padding: 0px;
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 6px;
 }
+
+.but-close-modal:hover .icon-close-modal {
+  fill: var(--color-accent);
+}
+
 /* Формы футер*/
 .but-footer {
   width: 200px;
@@ -774,6 +792,7 @@ img {
   background: var(--color-accent);
   cursor: pointer;
   margin-left: 12px;
+  border: none;
 }
 
 .but-list {
@@ -809,7 +828,7 @@ img {
 .mailing-form {
   display: flex;
 }
-/* Оформление модалки */
+/* -----------------------------------Оформление модалки ------------------------------------------*/
 
 .title-modal {
   font-weight: bold;
@@ -839,7 +858,12 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   height: 40px;
-  padding: 11px 0px 11px 12px;
+  padding: 11px 0px 11px 42px;
+  outline: none;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+  transition-delay: 0ms;
 }
 
 .form-area label {
@@ -880,14 +904,12 @@ textarea {
   font-size: 16px;
   line-height: 1.875;
   letter-spacing: 0.06em;
+  border: none;
 }
 
 .form-comment {
   display: flex;
   flex-direction: column;
-}
-
-.form-comment {
   margin-bottom: 20px;
 }
 
@@ -899,6 +921,11 @@ textarea {
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+  transition-delay: 0ms;
 }
 
 .form-comment textarea::placeholder {
@@ -911,4 +938,34 @@ textarea {
 .button-modal {
   display: flex;
   justify-content: center;
+}
+
+.icons-modal {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  fill: var(--color-text-nav);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+  transition-delay: 0ms;
+}
+
+.input-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area input:focus ~ .icons-modal {
+  fill: var(--color-accent);
+}
+
+.form-area input:focus {
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.form-comment textarea:focus {
+  border: 1px solid var(--color-accent);
 }
